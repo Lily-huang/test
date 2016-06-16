@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+
+group = 'test.demo'
+version = '1.0-SNAPSHOT'
+
+description = """demo.testcell Maven Webapp"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.slf4j', name: 'slf4j-jcl', version:'1.7.13'
+    compile group: 'joda-time', name: 'joda-time', version:'2.7'
+    compile group: 'org.testng', name: 'testng', version:'6.8.8'
+    compile group: 'net.sourceforge.jexcelapi', name: 'jxl', version:'2.6.12'
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}

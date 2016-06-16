@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DAVID_RENT" >
+    <test name="dvd_rent" >
+        <classes>
+            <class name="mengli.test.rent.RentTest" />
+        </classes>
+    </test>
+    <test name="dvd_change" >
+        <classes>
+            <class name="mengli.test.rent.ChangeTest" />
+        </classes>
+    </test>
+</suite>

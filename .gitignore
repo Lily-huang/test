@@ -4,6 +4,8 @@ build/
 settings.gradle
 pom.xml
 *.DS_Store
+*.iws
+*.ipr
 
 # Ignore Gradle GUI config
 gradle-app.setting

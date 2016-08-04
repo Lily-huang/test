@@ -1,4 +1,4 @@
-package com.mengli.qpitest.res;
+package com.mengli.apitest.res;
 
 import org.junit.Test;
 import org.w3c.dom.events.EventException;

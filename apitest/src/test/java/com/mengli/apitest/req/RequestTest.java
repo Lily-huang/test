@@ -1,4 +1,4 @@
-package com.mengli.qpitest.req;
+package com.mengli.apitest.req;
 
 import org.junit.Test;
 import org.w3c.dom.events.EventException;
@@ -41,6 +41,18 @@ public class RequestTest {
                 .then()
                 .log()
                 .all()
+                .assertThat()
+                .statusCode(200);
+    }
+
+    @Test
+    public void addStaff(){
+        String staff="{\"name\":\"testAdd\",\"staffNo\":\"133\",\"age\":24}";
+        given()
+                .body(staff)
+                .when()
+                .post("http://localhost:7001/staff/add")
+                .then()
                 .assertThat()
                 .statusCode(200);
     }

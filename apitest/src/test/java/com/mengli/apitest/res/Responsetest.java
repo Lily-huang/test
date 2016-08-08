@@ -27,22 +27,22 @@ public class Responsetest {
                 .log().all()
                 .assertThat()
                 .statusCode(200)
-                .body("kind",equalTo("books#volumes"))
-                .body("items.id",hasItem("0dge3Xh6EjUC"))
-                .body("items.volumeInfo.title",hasItems("Advances in Sea Cucumber Aquaculture and Management","The striped cucumber beetle and its control"));
+                .body("kind", equalTo("books#volumes"))
+                .body("items.id", hasItem("0dge3Xh6EjUC"))
+                .body("items.volumeInfo.title", hasItems("Advances in Sea Cucumber Aquaculture and Management", "The striped cucumber beetle and its control"));
     }
 
     @Test
-    public void testStaffJsonData(){
-        String id="111";
+    public void testStaffJsonData() {
+        String id = "111";
         given()
                 .when()
-                .get("http://localhost:7001/test/json/"+id)
+                .get("http://localhost:7001/test/json/" + id)
                 .then()
                 .log().all()
                 .assertThat()
                 .statusCode(200)
-                .body("staffNo",equalTo(id))
-                .body("name",equalTo("test"));
+                .body("staffNo", equalTo(id))
+                .body("name", equalTo("test"));
     }
 }

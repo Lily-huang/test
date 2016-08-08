@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
  */
 public class RequestTest {
     @Test
-    public void testGoogleBookSearch(){
+    public void testGoogleBookSearch() {
         given()
                 .when()
                 .get("https://www.googleapis.com/books/v1/volumes?q=cucumber&maxResults=2")
@@ -24,7 +24,7 @@ public class RequestTest {
     @Test
     public void testGoogleBookAPIDataInParameters() throws EventException {
         given().
-                params("q","cucumber","maxResults","2").
+                params("q", "cucumber", "maxResults", "2").
                 when()
                 .get("https://www.googleapis.com/books/v1/volumes")
                 .then()
@@ -34,7 +34,7 @@ public class RequestTest {
     }
 
     @Test
-    public void testStaffJson(){
+    public void testStaffJson() {
         given()
                 .when()
                 .get("http://localhost:7001/test/json/111")
@@ -46,8 +46,8 @@ public class RequestTest {
     }
 
     @Test
-    public void addStaff(){
-        String staff="{\"name\":\"testAdd\",\"staffNo\":\"133\",\"age\":24}";
+    public void addStaff() {
+        String staff = "{\"name\":\"testAdd\",\"staffNo\":\"133\",\"age\":24}";
         given()
                 .body(staff)
                 .when()

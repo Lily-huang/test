@@ -11,6 +11,13 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'groovy'
+apply plugin: 'checkstyle'
+
+ext{
+    jbehaveVersion='3.6.9'
+    springVersion='4.0.0.RELEASE'
+}
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -19,10 +26,27 @@ repositories {
     jcenter()
 }
 
+configurations{
+    hsqldb
+    compile.extendsFrom hsqldb
+}
+
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // The production code uses the SLF4J logging API at compile time
-    compile 'org.slf4j:slf4j-api:1.7.18'
+    compile ('org.slf4j:slf4j-api:1.7.18',
+            "org.codehaus.groovy:groovy-all:2.4.6",
+            "org.jbehave:jbehave-core:$jbehaveVersion",
+            "org.jbehave:jbehave-spring:$jbehaveVersion",
+            "org.springframework:spring-context:$springVersion",
+            "org.springframework:spring-test:$springVersion",
+            "org.springframework:spring-jdbc:$springVersion",
+            "org.codehaus.groovy.modules.http-builder:http-builder:0.5.0-RC2",
+            "com.github.dreamhead:moco-core:0.10.2",
+            "com.github.dreamhead:moco-runner:0.10.2"
+    )
+
+
 
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the

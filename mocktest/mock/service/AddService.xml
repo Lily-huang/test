@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://inter.webservice.mengli.com/">
+<soapenv:Header/>
+<soapenv:Body>
+    <int:add>
+        <arg0>testClient</arg0>
+        <arg1>2</arg1>
+        <arg2>4</arg2>
+    </int:add>
+</soapenv:Body>
+</soapenv:Envelope>
